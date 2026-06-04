@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/index.css">
+  <link rel="stylesheet" href="../assets/css/auth.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <title>Login</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100" id="login-body">
+
+  <header class="sticky-top shadow-sm mb-0 navbar-index">
+    <nav class="navbar navbar-expand-lg container">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">
+          <img src="../assets/images/logo.webp" alt="logo de la compañia" width="90">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#">
+                <i class="fa-solid fa-house me-1"></i>
+                Inicio
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#sobre-el-club">
+                <i class="fa-solid fa-dumbbell me-1"></i>
+                Sobre el Club
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto">
+                <i class="fa-solid fa-envelope me-1"></i>
+                Contacto
+              </a>
+            </li>
+
+            <li class="nav-item ms-lg-2">
+              <a class="nav-link" href="register.html">
+                <i class="fa-solid fa-user-plus me-2"></i>
+                Registrarse
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-grow-1 flex-grow-1 d-flex align-items-center justify-content-center flex-column">
+    <div class="container-fluid py-4 mb-5 text-white">
+      <div class="container text-center">
+        <h3 class="fw-bold display-3 text-uppercase welcome-title">
+          Bienvenido
+        </h3>
+        <p class="mb-0 fs-5">Inicia sesión para acceder a tu cuenta</p>
+      </div>
+    </div>
+    <form action="../dashboards/user.html"
+      class="position-relative col-12 col-md-6 col-xl-4 col-xxl-3 card p-4 mt-5 shadow-border"
+      style="--bs-card-bg: #f2ede7" id="login" method="get">
+      <img src="../assets/images/logo.webp" alt="logo de la compañia" id="auth-brand" class="position-absolute start-50"
+        style="top: -15px; transform: translate(-50%, -50%)">
+      <h2 class="card-title text-center">Login</h2>
+      <div class="input-box">
+        <label for="correo">Email:</label>
+        <input type="email" name="correo" id="correo" placeholder="Ingresa tu correo" class="form-control">
+      </div>
+      <div class="input-box">
+        <label for="contrasenia">Contraseña</label>
+        <input type="password" name="contrasenia" id="contrasenia" placeholder="Ingresa tu contraseña"
+          class="form-control">
+      </div>
+      <div class="submit-box">
+        <button type="submit">Ingresar</button>
+      </div>
+      <div class="my-3 d-grid" style="grid-template-columns: 1fr auto 1fr;">
+        <a href="#" class="text-end text-decoration-none pe-3">
+          ¿Olvidaste tu contraseña?
+        </a>
+
+        <span class="text-center">|</span>
+
+        <a href="register.html" class="text-start text-decoration-none ps-3">
+          Registrarse
+        </a>
+      </div>
+      <div class="card-footer text-center">
+        <small class="text-muted d-block mb-2">
+          Accesos rápidos ( dashboards )
+        </small>
+        <div class="d-flex justify-content-center gap-2">
+          <a href="../dashboards/user.html" class="btn btn-outline-primary btn-sm">
+            Usuario
+          </a>
+          <a href="../dashboards/coach.html" class="btn btn-outline-success btn-sm">
+            Coach
+          </a>
+
+          <a href="../dashboards/admin.html" class="btn btn-outline-danger btn-sm">
+            Administrador
+          </a>
+        </div>
+      </div>
+    </form>
+
+  </main>
+
+  <footer class="bg-dark text-light pt-4 pb-3 mt-5" id="contacto">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">SportLife Club</h5>
+          <p style="color: var(--bs-warning-bg-subtle);">
+            Tu espacio para entrenar, mejorar tu salud y alcanzar tus objetivos deportivos.
+          </p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">Contacto</h5>
+          <p class="mb-1">
+            <i class="fa-solid fa-envelope me-2"></i>
+            contacto@sportlifeclub.cl
+          </p>
+          <p class="mb-0">
+            <i class="fa-solid fa-phone me-2"></i>
+            +56 9 1234 5678
+          </p>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">Síguenos</h5>
+          <div class="d-flex gap-3 fs-4">
+            <a href="javascript:void(0)" class="text-light">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="javascript:void(0)" class="text-light">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="javascript:void(0)" class="text-light">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="javascript:void(0)" class="text-light">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="border-secondary">
+
+      <div class="text-center" style="color: var(--bs-warning-bg-subtle);">
+        <small>
+          &copy; 2026 SportLife Club. Todos los derechos reservados.
+        </small>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+/* Reset global */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Variables globales */
+:root {
+  --text-color: #191919;
+  --primary-border-color: #d7c6ff;
+  --primary-icon-color: #8b5cf6;
+  --font-size-h2: 2rem;
+  --font-size-label: 0.95rem;
+  --font-size-input: 0.85rem;
+  --main-bg: #dcb;
+  --secondary: #3d1b6a;
+  --main-color: rgb(36, 3, 54);
+  --family: #0ea5e9;
+  --family-dark: #2563eb;
+  --basic: #6c757d;
+  --basic-dark: #495057;
+
+  /* Radius */
+  --card-md-radius: 15px;
+  --circle-radius: 50%;
+
+}
+
+body {
+  background: linear-gradient(135deg, #ffffff, #f3f4f6);
+  color: var(--text-color);
+}
+
+h2 {
+  color: var(--main-color);
+}
+
+
+/* Bs - Cards */
+.card {
+  border-radius: var(--card-md-radius);
+}
+
+
+
+/* ICONOS */
+main i {
+  color: var(--primary-icon-color);
+}
+
+:target h2 {
+  display: inline;
+  background: linear-gradient(transparent 60%, #e4c640 60%);
+  padding: 0 10px;
+}
+
+.banner-img {
+  height: 250px;
+  object-fit: cover;
+  filter: brightness(0.65);
+}
+
+.carousel-caption {
+  bottom: 20%;
+}
+
+.carousel-caption h3 {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.btn {
+  border: none;
+  font-weight: 600;
+}
+
+.card {
+  border-radius: var(--card-md-radius);
+  border: 1px solid var(--primary-border-color);
+}
+
+.btn-premium {
+  background: linear-gradient(135deg, #f1c40f, #f39c12);
+  padding: 10px 18px;
+}
+
+.btn-familiar {
+  background: linear-gradient(135deg, var(--family), var(--family-dark));
+  color: #fff;
+  padding: 12px;
+  box-shadow: 0 8px 18px rgba(14, 165, 233, 0.35);
+}
+
+.btn-basico {
+  background: linear-gradient(135deg, var(--basic), var(--basic-dark));
+  color: #fff;
+  padding: 12px;
+}
+
+a:active,
+a:focus,
+img:focus {
+  border: none;
+  outline: none;
+}
+
+/* Hover */
+@media (hover: hover) {
+  .hv-primary:hover {
+    border-color: 2px solid var(--primary-border-color);
+    transform: scale(1.04);
+    box-shadow:
+      4px 8px 25px rgba(74, 25, 153, 0.25);
+  }
+
+}
+
+/* Utilities */
+.circle {
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+.hv-primary {
+  transition: all .2s ease;
+}

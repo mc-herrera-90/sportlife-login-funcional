@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="./assets/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="SportLife" />
+  <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+  <!-- Font Awesome Local -->
+  <link rel="stylesheet" href="./assets/libs/font-awesome/7.2.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/index.css">
+  <!-- Lightbox 3 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightbox3@1.1.0/dist/lightbox3.min.css">
+  <title>Home</title>
+</head>
+
+<body>
+  <header class="sticky-top shadow-sm navbar-index">
+    <nav class="navbar navbar-expand-lg container" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./assets/images/logo.webp" alt="logo de la compañia" width="90">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">
+                <i class="fa-solid fa-house me-1"></i>
+                Inicio
+              </a>
+            </li>
+            <!-- planes -->
+            <li class="nav-item">
+              <a class="nav-link" href="#planes">
+                <i class="fa-solid fa-dumbbell me-1"></i>
+                Planes
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sobre-el-club">
+                <i class="fa-solid fa-dumbbell me-1"></i>
+                Sobre el Club
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto">
+                <i class="fa-solid fa-envelope me-1"></i>
+                Contacto
+              </a>
+            </li>
+
+            <li class="nav-item ms-lg-4">
+              <a class="nav-link" href="auth/login.html">
+                <i class="fa-solid fa-right-to-bracket me-1"></i>
+                Iniciar sesión
+              </a>
+            </li>
+
+            <li class="nav-item ms-lg-2">
+              <a class="nav-link" href="auth/register.html">
+                <i class="fa-solid fa-user-plus me-2"></i>
+                Registrarse
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div id="sportBanner" class="carousel slide carousel-fade mx-auto mb-5" data-bs-ride="carousel"
+      data-bs-interval="3000" style="overflow: hidden;">
+
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#sportBanner" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#sportBanner" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#sportBanner" data-bs-slide-to="2"></button>
+      </div>
+
+      <!-- SLIDES -->
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <img src="assets/images/carousel/01.webp" class="d-block w-100 banner-img" alt="gym">
+          <div class="carousel-caption d-none d-md-block">
+            <h3 class="fw-bold display-4">Entrena fuerte</h3>
+            <p class="fs-5">Disciplina y constancia</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="assets/images/carousel/02.webp" class="d-block w-100 banner-img" alt="running">
+          <div class="carousel-caption d-none d-md-block">
+            <h3 class="fw-bold display-4">Supera tus límites</h3>
+            <p class="fs-5">Cada día cuenta</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="./assets/images/carousel/03.webp" class="d-block w-100 banner-img" alt="sport">
+          <div class="carousel-caption d-none d-md-block">
+            <h3 class="fw-bold display-4">Vida deportiva</h3>
+            <p class="fs-5">Salud y energía</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CONTROLES -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#sportBanner" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#sportBanner" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
+    </div>
+    <section class="py-0 overflow-hidden container">
+
+      <div class="container text-center mb-4">
+        <h2 class="fw-bold display-4 text-uppercase">Entrena. Supera. Evoluciona.</h2>
+        <p class="text-muted fs-5 mt-3">
+          Todo lo que necesitas para alcanzar tus objetivos.
+        </p>
+      </div>
+
+      <div class="benefits-slider py-5">
+
+        <div class="benefits-track">
+
+          <!-- Grupo 1 -->
+          <div class="benefit-item">
+            <i class="fa-solid fa-dumbbell"></i>
+            <span>Equipamiento Moderno</span>
+          </div>
+
+          <div class="benefit-item">
+            <i class="fa-solid fa-user-group"></i>
+            <span>Coaches Certificados</span>
+          </div>
+
+          <div class="benefit-item">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <span>Bienestar Integral</span>
+          </div>
+
+          <div class="benefit-item">
+            <i class="fa-solid fa-trophy"></i>
+            <span>Resultados Reales</span>
+          </div>
+
+          <div class="benefit-item">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Más Energía</span>
+          </div>
+
+          <div class="benefit-item">
+            <i class="fa-solid fa-fire"></i>
+            <span>Quema Calorías</span>
+          </div>
+
+          <!-- Duplicados para loop infinito -->
+          <div class="benefit-item">
+            <i class="fa-solid fa-dumbbell"></i>
+            <span>Equipamiento Moderno</span>
+          </div>
+
+          <div class="benefit-item">
+            <i class="fa-solid fa-user-group"></i>
+            <span>Coaches Certificados</span>
+          </div>
+
+          <div class="benefit-item">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <span>Bienestar Integral</span>
+          </div>
+
+          <div class="benefit-item">
+            <i class="fa-solid fa-trophy"></i>
+            <span>Resultados Reales</span>
+          </div>
+
+          <div class="benefit-item">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Más Energía</span>
+          </div>
+
+          <div class="benefit-item">
+            <i class="fa-solid fa-fire"></i>
+            <span>Quema Calorías</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+    <section id="planes" class="container mb-5 py-5">
+      <div class="text-center mb-4">
+        <h2 class="text-uppercase display-3 fw-bold">Planes</h2>
+        <p class="text-muted fs-5 mb-5">
+          Encuentra el plan ideal para tu estilo de vida y lleva tu rendimiento al siguiente nivel.
+        </p>
+      </div>
+      <div class="row flex-row-reverse g-5">
+        <!-- PLAN PREMIUN -->
+        <div class="col-12 col-md-6 col-xl-4">
+
+          <div class="card h-100 card-premium circle hv-primary">
+
+            <div class="text-center pt-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 32 32">
+                <g fill="none">
+                  <circle cx="16" cy="16" r="16" fill="#F1B32B" />
+                  <path fill="#FFF"
+                    d="M15.75 4C9.26 4 4 9.26 4 15.75S9.26 27.5 15.75 27.5S27.5 22.24 27.5 15.75A11.75 11.75 0 0 0 15.75 4m0 20.57a8.82 8.82 0 1 1 0-17.64a8.82 8.82 0 0 1 0 17.64m-2.93-8.81l2.94 4.4l2.92-4.4l-2.92-4.41z" />
+                </g>
+              </svg>
+            </div>
+
+            <div class="card-body text-center px-4">
+              <h5 class="card-title fw-bold text-uppercase">Plan Premium</h5>
+
+              <p class="card-text text-muted">
+                Acceso ilimitado a clases, máquinas y uso completo de instalaciones.
+              </p>
+
+              <div class="d-flex justify-content-center gap-2 mb-3">
+                <span class="badge rounded-pill text-bg-warning">VIP</span>
+                <span class="badge rounded-pill text-bg-dark">Full Access</span>
+              </div>
+
+              <!-- BOTÓN PREMIUM -->
+              <button class="btn btn-premium w-100" data-bs-toggle="modal" data-bs-target="#modalPlanPremium">
+                Ver plan
+              </button>
+
+            </div>
+          </div>
+        </div>
+        <!-- PLAN FAMILIAR -->
+        <div class="col-12 col-md-6 col-xl-4">
+          <div class="card h-100 card-familiar text-center circle hv-primary">
+            <div class="pt-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24">
+                <path fill="#eac88b"
+                  d="M3.69 9.12a.88.88 0 0 0-.65-.28c-.41 0-.72.19-.92.58s-.15.76.17 1.11q1.77 1.59 2.25 2.25c.41.56.61 1.38.61 2.44c0 1.31.5 2.28 1.5 2.95c.56.44 1.17.77 1.85.99v-3.89c0-.94-.33-1.72-.96-2.35m8.92.05c-.62.62-.96 1.39-.96 2.3v3.93c.96-.34 1.76-.87 2.42-1.57c.65-.7.98-1.47.98-2.41c0-1.13.19-1.94.57-2.44c.09-.16.26-.36.53-.61c.23-.25.47-.49.71-.71c.23-.21.46-.43.68-.65l.33-.28a.9.9 0 0 0 .28-.66c0-.28-.09-.53-.28-.73s-.42-.3-.72-.3s-.5.09-.69.28M12 20c.69 0 1.36-.09 2-.28v-3.57c0-.59-.18-1.05-.59-1.49Q12.795 14 12 14c-.53 0-1 .2-1.38.61c-.4.39-.62.85-.62 1.45v3.66c.64.19 1.31.28 2 .28M9 8.5c0 .83-.67 1.5-1.5 1.5S6 9.33 6 8.5S6.67 7 7.5 7S9 7.67 9 8.5m9 0c0 .83-.67 1.5-1.5 1.5S15 9.33 15 8.5S15.67 7 16.5 7s1.5.67 1.5 1.5m-4.5-3c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5S11.17 4 12 4s1.5.67 1.5 1.5m0 5.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5s1.5.67 1.5 1.5" />
+              </svg>
+            </div>
+
+            <div class="card-body px-4">
+
+              <h5 class="card-title fw-bold text-uppercase">Plan Familiar</h5>
+
+              <p class="card-text text-muted">
+                Plan para grupos familiares con beneficios especiales y acceso compartido.
+              </p>
+
+              <div class="d-flex justify-content-center gap-2 mb-3">
+                <span class="badge rounded-pill text-bg-primary">4 personas</span>
+                <span class="badge rounded-pill text-bg-success">Ahorro</span>
+              </div>
+
+              <button class="btn btn-familiar w-100" data-bs-toggle="modal" data-bs-target="#modalPlanFamiliar">
+                Ver plan
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- PLAN BÁSICO -->
+        <div class="col-12 col-md-6 col-xl-4">
+          <div class="card h-100 text-center card-basico circle hv-primary">
+            <div class="pt-4 text-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 48 48">
+                <path d="M0 0h48v48H0z" fill="none" />
+                <g fill="none" stroke="#3391da" stroke-width="4">
+                  <path d="M36 15a5 5 0 1 0 0-10a5 5 0 0 0 0 10Z" />
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="m12 16.77l8.003-2.772L31 19.247l-10.997 8.197L31 34.684l-6.992 9.314M35.32 21.643l2.682 1.459L44 17.466M16.849 31.545l-2.97 3.912l-9.875 5.54" />
+                </g>
+              </svg>
+            </div>
+
+            <div class="card-body px-4">
+
+              <h5 class="card-title fw-bold text-uppercase">Plan Básico</h5>
+
+              <p class="card-text text-muted">
+                Acceso esencial al gimnasio con beneficios limitados para entrenamiento libre.
+              </p>
+
+              <div class="d-flex justify-content-center gap-2 mb-3">
+                <span class="badge rounded-pill text-bg-secondary">Individual</span>
+                <span class="badge rounded-pill text-bg-light border">Económico</span>
+              </div>
+
+              <button class="btn btn-basico w-100" data-bs-toggle="modal" data-bs-target="#modalPlanBasico">
+                Ver plan
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container py-5" id="sobre-el-club">
+
+      <div class="text-center mb-5">
+        <h2 class="fw-bold display-3 text-uppercase">
+          Sobre el Club
+        </h2>
+
+        <p class="text-muted fs-5">
+          Más que un gimnasio, un espacio dedicado al bienestar, el deporte y el crecimiento personal.
+        </p>
+      </div>
+
+      <div class="row align-items-center g-5">
+
+        <!-- TEXTO -->
+        <div class="col-md-6">
+
+          <h4 class="fw-bold mb-3">
+            <i class="fa-solid fa-landmark me-2"></i>
+            Historia
+          </h4>
+          <p class="text-muted mb-4">
+            SportLife nació con el propósito de promover un estilo de vida saludable a través del deporte y la actividad
+            física.
+          </p>
+
+          <h4 class="fw-bold mb-3">
+            <i class="fa-solid fa-bullseye me-2 text-danger"></i>
+            Misión
+          </h4>
+          <p class="text-muted mb-4">
+            Brindar una experiencia integral de entrenamiento con instalaciones modernas y profesionales capacitados.
+          </p>
+
+          <h4 class="fw-bold mb-3">
+            <i class="fa-solid fa-eye me-2"></i>
+            Visión
+          </h4>
+          <p class="text-muted">
+            Ser un referente deportivo que impulse el desarrollo físico y personal de la comunidad.
+          </p>
+
+        </div>
+
+        <!-- IMAGEN -->
+        <div class="col-md-6">
+          <img src="assets/images/training2.webp" class="img-fluid rounded shadow" alt="club sport">
+        </div>
+
+      </div>
+
+    </section>
+    <!-- PLAYER -->
+    <section class="container py-5" id="musicSection">
+
+      <div class="text-center mb-4">
+        <h2 class="fw-bold display-4 text-uppercase">Música de entrenamiento</h2>
+        <p class="text-muted fs-5">
+          Activa el modo energía mientras navegas el sitio.
+        </p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+
+          <div id="musicCard" class="card border-0 shadow-lg rounded-4 overflow-hidden position-relative"
+            style="height:160px;" onfullscreenchange="
+          if (!document.fullscreenElement) {
+            this.style.height = '160px';
+          } else {
+            this.style.height = '100vh';
+          }
+        ">
+
+            <!-- BOTÓN FULLSCREEN -->
+            <button class="btn btn-dark btn-sm position-absolute top-0 end-0 m-2 rounded-pill" style="z-index:10;"
+              onclick="
+            const el = document.getElementById('musicCard');
+
+            if (!document.fullscreenElement) {
+              el.requestFullscreen();
+            } else {
+              document.exitFullscreen();
+            }
+          ">
+              ⛶
+            </button>
+
+            <div class="card-body p-0 h-100">
+
+              <iframe src="player/index.html" style="width:100%; height:100%; border:0;" allow="autoplay"></iframe>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+    <!-- GALERÍA -->
+    <section class="container py-5">
+
+      <div class="text-center mb-5">
+        <h2 class="fw-bold display-3 text-uppercase">Galería</h2>
+        <p class="text-muted fs-5">
+          Conoce nuestras instalaciones y actividades.
+        </p>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="ratio ratio-4x3">
+            <a href="assets/images/gallery/01.webp" data-lightbox="sportlife" data-caption="Sala de máquimas y pesas">
+              <img src="assets/images/gallery/01.webp" class="w-100 h-100 rounded shadow-sm" style="object-fit: cover;"
+                alt="">
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="ratio ratio-4x3">
+            <a href="assets/images/gallery/02.webp" data-lightbox="sportlife"
+              data-caption="Coach comprometidos con tus objetivos">
+              <img src="assets/images/gallery/02.webp" class="w-100 h-100 rounded shadow-sm" alt="">
+            </a>
+          </div>
+
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="ratio ratio-4x3">
+            <a href="assets/images/gallery/03.webp" data-lightbox="sportlife">
+              <img src="assets/images/gallery/03.webp" class="w-100 h-100 rounded shadow-sm" alt="">
+            </a>
+          </div>
+
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="ratio ratio-4x3">
+            <a href="assets/images/gallery/04.webp" data-lightbox="sportlife">
+              <img src="assets/images/gallery/04.webp" class="w-100 h-100 rounded shadow-sm" alt="">
+            </a>
+          </div>
+
+        </div>
+        <!-- PIC 5 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="ratio ratio-4x3">
+            <a href="assets/images/gallery/05.webp" data-lightbox="sportlife">
+              <img src="assets/images/gallery/05.webp" class="w-100 h-100 rounded shadow-sm" alt="">
+            </a>
+          </div>
+
+        </div>
+        <!-- PIC 6  -->
+        <div class="col-md-6 col-lg-4">
+          <div class="ratio ratio-4x3">
+            <a href="assets/images/gallery/06.webp" data-lightbox="sportlife">
+              <img src="assets/images/gallery/06.webp" class="w-100 h-100 rounded shadow-sm" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-dark text-light pt-4 pb-3 mt-5" id="contacto">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-4 mb-3">
+          <img src="./assets/images/logo.webp" alt="logo" width="120" class="mb-2">
+          <p style="color: var(--bs-warning-bg-subtle);">
+            Tu espacio para entrenar, mejorar tu salud y alcanzar tus objetivos deportivos.
+          </p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">Contacto</h5>
+          <p class="mb-1">
+            <i class="fa-solid fa-envelope me-2"></i>
+            contacto@sportlifeclub.cl
+          </p>
+          <p class="mb-0">
+            <i class="fa-solid fa-phone me-2"></i>
+            +56 9 1234 5678
+          </p>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">Síguenos</h5>
+          <div class="d-flex gap-3 fs-4">
+            <a href="javascript:void(0)" class="text-light">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="javascript:void(0)" class="text-light">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="javascript:void(0)" class="text-light">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="javascript:void(0)" class="text-light">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="border-secondary">
+
+      <div class="text-center" style="color: var(--bs-warning-bg-subtle);">
+        <small>
+          &copy; 2026 SportLife Club. Todos los derechos reservados.
+        </small>
+      </div>
+    </div>
+  </footer>
+  <!-- MODALES -->
+  <!-- MODAL PREMIUM -->
+  <div class="modal fade" id="modalPlanPremium" tabindex="-1" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold">
+            <i class="fa-solid fa-crown me-2"></i>
+            Plan Premium
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+
+          <p class="mb-3">
+            Acceso completo a todas las instalaciones, clases y beneficios exclusivos del club.
+          </p>
+
+          <ul class="list-group list-group-flush">
+
+            <li class="list-group-item">
+              <i class="fa-solid fa-circle-check me-2 text-warning"></i>
+              Acceso ilimitado a todas las clases
+            </li>
+
+            <li class="list-group-item">
+              <i class="fa-solid fa-dumbbell me-2 text-warning"></i>
+              Uso completo de máquinas e instalaciones
+            </li>
+
+            <li class="list-group-item">
+              <i class="fa-solid fa-user-tie me-2 text-warning"></i>
+              Asesoría personalizada
+            </li>
+
+            <li class="list-group-item">
+              <i class="fa-solid fa-clock me-2 text-warning"></i>
+              Acceso 24/7 según disponibilidad
+            </li>
+            <li class="list-group-item">
+              <i class="fa-solid fa-dollar-sign me-2 text-success"></i>
+              Precio: $<span>38.990</span> / mes
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">
+            Cerrar
+          </button>
+
+          <button class="btn btn-premium">
+            Contratar Premium
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <!-- MODAL FAMILIAR -->
+  <div class="modal fade" id="modalPlanFamiliar" tabindex="-1" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold">
+            <i class="fa-solid fa-people-group me-2"></i>
+            Plan Familiar
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+
+          <p class="mb-3">
+            Plan ideal para familias que quieren entrenar juntas con beneficios exclusivos.
+          </p>
+
+          <ul class="list-group list-group-flush">
+
+            <li class="list-group-item">
+              <i class="fa-solid fa-user-group me-2"></i>
+              Hasta 4 integrantes
+            </li>
+
+            <li class="list-group-item">
+              <i class="fa-solid fa-dumbbell me-2"></i>
+              Acceso ilimitado al gimnasio
+            </li>
+
+            <li class="list-group-item">
+              <i class="fa-solid fa-tags me-2"></i>
+              Descuento por grupo familiar
+            </li>
+
+            <li class="list-group-item">
+              <i class="fa-solid fa-calendar-check me-2"></i>
+              Horarios flexibles
+            </li>
+            <li class="list-group-item">
+              <i class="fa-solid fa-dollar-sign me-2 text-success"></i>
+              Precio: $<span>25.990</span> / mes
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">
+            Cerrar
+          </button>
+
+          <button class="btn btn-primary">
+            Contratar plan
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <!-- MODAL BÁSICO -->
+  <div class="modal fade" id="modalPlanBasico" tabindex="-1" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold">
+            <i class="fa-solid fa-circle-info me-2"></i>
+            Plan Básico
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+
+          <p class="mb-3">
+            Plan ideal para comenzar en el gimnasio con acceso esencial a instalaciones y entrenamiento libre.
+          </p>
+
+          <ul class="list-group list-group-flush">
+
+            <li class="list-group-item">
+              <i class="fa-solid fa-dumbbell me-2 text-secondary"></i>
+              Acceso a área de entrenamiento libre
+            </li>
+
+            <li class="list-group-item">
+              <i class="fa-solid fa-clock me-2 text-secondary"></i>
+              Horario estándar de uso
+            </li>
+
+            <li class="list-group-item">
+              <i class="fa-solid fa-user me-2 text-secondary"></i>
+              Uso individual
+            </li>
+
+            <li class="list-group-item">
+              <i class="fa-solid fa-ban me-2 text-secondary"></i>
+              Sin servicios premium incluidos
+            </li>
+
+            <li class="list-group-item">
+              <i class="fa-solid fa-dollar-sign me-2 text-success"></i>
+              Precio: $<span>12.990</span> / mes
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">
+            Cerrar
+          </button>
+
+          <button class="btn btn-basico">
+            Contratar Básico
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+  <script src="assets/libs/lightbox3/js/lightbox3.min.js"></script>
+</body>
+
+</html>

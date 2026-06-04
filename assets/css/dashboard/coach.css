@@ -1,0 +1,47 @@
+:root {
+  --primary: #22c55e;
+  --secondary: #16a34a;
+  --dark: #14532d;
+  --light: #86efac;
+
+  --bg-main: #f6fffa;
+  --bg-soft-green: #e9fcef;
+
+  --bg-gradient-body: linear-gradient(
+    180deg,
+    #f6fffa 0%,
+    #e9fcef 50%,
+    #ffffff 100%
+  );
+
+  --navbar-gradient: linear-gradient(
+    90deg,
+    #14532d,
+    #22c55e,
+    #86efac
+  );
+
+  --navbar-text: #ffffff;
+}
+
+body {
+  background: var(--bg-gradient-body);
+  min-height: 100vh;
+}
+.navbar-user {
+  background: var(--navbar-gradient);
+}
+
+.navbar-user .nav-link {
+  color: var(--navbar-text);
+  transition: 0.2s ease;
+}
+
+
+.navbar-user .navbar-toggler {
+  border: none;
+}
+
+.navbar-user .navbar-toggler-icon {
+  filter: brightness(0) invert(1);
+}

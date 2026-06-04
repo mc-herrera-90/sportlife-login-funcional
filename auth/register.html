@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es|">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/index.css">
+  <link rel="stylesheet" href="../assets/css/auth.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <title>Registro | SportLife</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100" id="register-body">
+  <header class="sticky-top shadow-sm navbar-index" style="margin-bottom: 150px !important;">
+    <nav class="navbar navbar-expand-lg container">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">
+          <img src="../assets/images/logo.webp" alt="logo de la compañia" width="90">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#">
+                <i class="fa-solid fa-house me-1"></i>
+                Inicio
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#sobre-el-club">
+                <i class="fa-solid fa-dumbbell me-1"></i>
+                Sobre el Club
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto">
+                <i class="fa-solid fa-envelope me-1"></i>
+                Contacto
+              </a>
+            </li>
+            <li class="nav-item ms-lg-4">
+              <a class="nav-link" href="./login.html">
+                <i class="fa-solid fa-right-to-bracket me-1"></i>
+                Iniciar sesión
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="py-5">
+
+    <div class="position-relative col-12 col-md-6 col-xl-5 col-xxl-4 card p-3 pt-4 p-xl-5 mx-auto shadow-border"
+      style="--bs-card-bg: #f2ede7">
+      <img src="../assets/images/logo.webp" alt="logo de la compañia" id="auth-brand" class="position-absolute start-50"
+        style="top: -20px; transform: translate(-50%, -50%)">
+
+      <h2 class="card-title text-center">Registro</h2>
+      <div class="form-check form-switch my-3">
+        <input class="form-check-input" type="checkbox" id="demo-validation">
+        <label class="form-check-label" for="demo-validation">
+          Mostrar mensajes
+        </label>
+      </div>
+      <div class="alert alert-success success-feedback mt-3 is-valid d-none">
+        Usuario registrado correctamente.
+      </div>
+      <form action="#" onsubmit="return false;" class="w-100">
+
+        <div class="input-box">
+          <label for="correo">Nombre:</label>
+          <input type="name" name="correo" id="correo" placeholder="Ingresa tu nombre" class="form-control">
+
+          <span class="text-danger small mt-1 invalid-feedback"><i class="fa-solid fa-user-xmark me-1"></i> El nombre
+            debe tener al menos 3 caracteres</span>
+        </div>
+        <div class="input-box">
+          <label for="nacimiento">Fecha de nacimiento</label>
+          <input type="text" id="nacimiento" name="nacimiento" placeholder="DD/MM/AAAA" onfocus="this.type='date'"
+            onblur="if(!this.value)this.type='text'" class="form-control">
+          <span class="text-danger small mt-1 invalid-feedback"><i class="fa-solid fa-calendar-xmark me-1"></i> Fecha
+            inválida</span>
+        </div>
+
+        <div class="input-box">
+          <label for="correo">Email:</label>
+          <input type="email" name="correo" id="correo" placeholder="Ej: jperez@correo.cl" class="form-control">
+          <span class="text-danger small mt-1 invalid-feedback"><i class="fa-solid fa-envelope me-1"></i> Correo
+            inválido</span>
+        </div>
+
+        <div class="input-box">
+          <label for="contrasenia">Contraseña</label>
+          <input type="password" name="contrasenia" id="contrasenia" placeholder="Ingresa tu contraseña"
+            class="form-control">
+        </div>
+
+        <div class="input-box">
+          <label for="contrasenia2">Confirmar Contraseña</label>
+          <input type="password" name="contrasenia2" id="contrasenia2" placeholder="Confirma tu contraseña"
+            class="form-control">
+          <span class="text-danger small mt-1 invalid-feedback"><i class="fa-solid fa-triangle-exclamation me-1"></i>
+            Las contraseñas no coinciden</span>
+        </div>
+        <div class="input-box">
+          <label for="deporte">¿Practicas algún deporte?</label>
+
+          <select name="deporte" id="deporte" class="form-select">
+            <option value="" disabled selected>
+              Selecciona un deporte
+            </option>
+
+            <option value="futbol">Fútbol</option>
+            <option value="basketball">Basketball</option>
+            <option value="tenis">Tenis</option>
+            <option value="running">Running</option>
+            <option value="natacion">Natación</option>
+            <option value="ciclismo">Ciclismo</option>
+            <option value="gym">Gimnasio</option>
+            <option value="voleibol">Voleibol</option>
+            <option value="padel">Pádel</option>
+            <option value="ninguno">Ninguno</option>
+          </select>
+        </div>
+
+        <div class="input-box">
+          <label for="actividad">¿Qué tipo de actividad le interesa?</label>
+          <input type="name" name="actividad" id="correo" placeholder="Por ejemplo: competir" class="form-control">
+        </div>
+
+        <div class="submit-box">
+          <button type="submit">Crear cuenta</button>
+        </div>
+        <div class="links-box">
+          <span>¿Ya tienes una cuenta? <a href="./login.html">Iniciar sesión</a></span>
+        </div>
+      </form>
+
+    </div>
+
+  </main>
+  <footer class="bg-dark text-light pt-4 pb-3 mt-5" id="contacto">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">SportLife Club</h5>
+          <p style="color: var(--bs-warning-bg-subtle);">
+            Tu espacio para entrenar, mejorar tu salud y alcanzar tus objetivos deportivos.
+          </p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">Contacto</h5>
+          <p class="mb-1">
+            <i class="fa-solid fa-envelope me-2"></i>
+            contacto@sportlifeclub.cl
+          </p>
+          <p class="mb-0">
+            <i class="fa-solid fa-phone me-2"></i>
+            +56 9 1234 5678
+          </p>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">Síguenos</h5>
+          <div class="d-flex gap-3 fs-4">
+            <a href="javascript:void(0)" class="text-light">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="javascript:void(0)" class="text-light">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="javascript:void(0)" class="text-light">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="javascript:void(0)" class="text-light">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="border-secondary">
+
+      <div class="text-center" style="color: var(--bs-warning-bg-subtle);">
+        <small>
+          &copy; 2026 SportLife Club. Todos los derechos reservados.
+        </small>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
