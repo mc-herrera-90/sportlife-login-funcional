@@ -4,7 +4,7 @@ const feedback = document.getElementById("feedback");
 window.addEventListener("load", async () => {
 
     // Cargamos la data del JSON
-    const respuesta = await fetch("../../data/users.json");
+    const respuesta = await fetch("/data/users.json");
 
     const usuarios = respuesta.ok ? await respuesta.json() : [];
 
