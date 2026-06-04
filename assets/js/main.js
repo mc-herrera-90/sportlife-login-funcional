@@ -1,10 +1,14 @@
 const formLogin = document.getElementById("login");
 const feedback = document.getElementById("feedback"); 
 
+const BASE_PATH = location.pathname.split("/")[1]
+  ? `/${location.pathname.split("/")[1]}`
+  : "";
+
 window.addEventListener("load", async () => {
 
     // Cargamos la data del JSON
-    const respuesta = await fetch("/data/users.json");
+    const respuesta = await fetch(`${BASE_PATH}/data/users.json`);
 
     const usuarios = respuesta.ok ? await respuesta.json() : [];
 
@@ -37,12 +41,13 @@ window.addEventListener("load", async () => {
                 break;
 
             case "coach":
-                window.location.href = "../dashboards/coach.html"
+                window.location.href = "../dashboards/coach.html";
                 break;
             
             case "admin":
-                window.location.href = "../dashboards/admin.html" 
-            
+                window.location.href = "../dashboards/admin.html";
+                break;
+
             default:
                 feedback.classList.remove("d-none");
                 feedback.textContent = "Rol no encontrado";
