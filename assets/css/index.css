@@ -1,0 +1,182 @@
+:root {
+  --primary: #8b5cf6; 
+  --secondary: #6d28d9;
+  --dark: #1e1033;   
+  --light: #c4b5fd;
+
+  --bg-main: #f5f3ff;
+  --bg-soft-purple: #ede9fe;
+
+  --bg-gradient-body: linear-gradient(
+    180deg,
+    #f5f3ff 0%,
+    #ede9fe 50%,
+    #ffffff 100%
+  );
+
+  --navbar-gradient: linear-gradient(
+    90deg,
+    #1e1033,
+    #2e1065,
+    #6d28d9
+  );
+
+  --navbar-text: #ffffff;
+}
+
+body {
+  background: var(--bg-gradient-body);
+  min-height: 100vh;
+}
+.navbar-index {
+  background: var(--navbar-gradient);
+}
+
+:target h2 {
+    display: inline;
+    background: linear-gradient(transparent 60%, #fcb622 60%);
+    padding: 0 10px;
+}
+
+.navbar-index .nav-link {
+  color: var(--navbar-text);
+  transition: 0.2s ease;
+}
+
+
+.navbar-index .navbar-toggler {
+  border: none;
+}
+
+.navbar-index .navbar-toggler-icon {
+  filter: brightness(0) invert(1);
+}
+
+#sobre-el-club i {
+    color: var(--secondary);
+}
+
+.benefits-slider {
+  position: relative;
+  overflow: hidden;
+
+  /* Difuminado */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.benefits-track {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+
+  width: max-content;
+
+  animation: benefits-scroll 25s linear infinite;
+}
+
+
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+
+  padding: 1rem 1.5rem;
+
+  white-space: nowrap;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, .75);
+
+  border: 1px solid rgba(109, 40, 217, .15);
+
+  backdrop-filter: blur(8px);
+
+  transition: all .3s ease;
+}
+
+.benefit-item:hover {
+
+  border-color: var(--primary);
+
+  box-shadow:
+    0 8px 25px rgba(109, 40, 217, .15);
+}
+
+.benefit-item i {
+  font-size: 1.25rem;
+}
+
+.benefit-item span {
+  font-weight: 600;
+  color: var(--dark);
+}
+
+@keyframes benefits-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .benefits-track {
+    gap: 1rem;
+    animation-duration: 18s;
+  }
+
+  .benefit-item {
+    padding: .85rem 1.25rem;
+  }
+
+  .benefit-item span {
+    font-size: .9rem;
+  }
+
+}
+
+footer {
+  background: var(--navbar-gradient);
+}
+
+footer h5 {
+    color: #fcb622;
+}
+
+@media (min-width: 1200px) {
+    .banner-img {
+        height: 60vh;
+    }
+}
+
+@media (min-width: 1400px) {
+    .banner-img {
+        height: 70vh;
+    }
+}
+
+
+@media(hover: hover){
+    .nav-link:hover {
+        color: #fcb622;
+    }
+}

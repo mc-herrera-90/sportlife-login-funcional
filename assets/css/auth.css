@@ -1,0 +1,123 @@
+#login-body {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(40, 10, 60, 0.55),
+      rgba(10, 5, 20, 0.75)
+    ),
+    url('https://cdn.pixabay.com/photo/2025/04/20/18/36/exercise-9546022_1280.png')
+    no-repeat center left;
+
+  background-size: contain;
+  min-height: 100vh;
+}
+
+#register-body {
+  min-height: 100vh;
+  background:
+    linear-gradient(
+      rgba(45, 20, 75, .55),
+      rgba(45, 20, 75, .55)
+    ),
+
+    linear-gradient(
+      to right,
+      transparent 0%,
+      transparent 60%,
+      rgba(141, 119, 181, .25) 75%,
+      rgba(141, 119, 181, .75) 90%,
+      #8d77b5 100%
+    ),
+
+    url('../images/register-bg.webp');
+
+  background-color: #58417c;
+
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 40% auto;
+}
+
+
+.welcome-title {
+  color: #fff;
+  font-weight: 900;
+  letter-spacing: .05em;
+
+  text-shadow:
+
+    /* CONTORNO MORADO */
+    -2px -2px 0 #2e1065,
+     0px -2px 0 #2e1065,
+     2px -2px 0 #2e1065,
+
+    -2px  0px 0 #2e1065,
+     2px  0px 0 #2e1065,
+
+    -2px  2px 0 #2e1065,
+     0px  2px 0 #2e1065,
+     2px  2px 0 #2e1065,
+
+    -4px -4px 0 rgba(255,188,33,.9),
+     0px -4px 0 rgba(255,188,33,.9),
+     4px -4px 0 rgba(255,188,33,.9),
+
+    -4px  0px 0 rgba(255,188,33,.9),
+     4px  0px 0 rgba(255,188,33,.9),
+
+    -4px  4px 0 rgba(255,188,33,.9),
+     0px  4px 0 rgba(255,188,33,.9),
+     4px  4px 0 rgba(255,188,33,.9),
+    0 0 8px rgba(255,188,33,.7),
+    0 0 16px rgba(255,188,33,.4),
+
+    0 0 6px rgba(255,255,255,.8),
+
+    0 8px 12px rgba(0,0,0,.25),
+    5px 4px 20px #2e1065;
+}
+
+img#auth-brand {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(2px 1px 6px #401);
+}
+
+.shadow-border {
+    box-shadow: 2px 1px 20px #4018, -2px -1px 20px #4013;
+}
+
+label {
+    font-weight: 600;
+    color: #3d1b6a;
+}
+
+
+button {
+    border: none;
+    padding: 10px 18px;
+    font-size: var(--font-size-label);
+    border-radius: 4px;
+    background: #3d1b6a;
+    color: white;
+    cursor: pointer;
+}
+
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+    gap: 5px;
+}
+
+.card:has(#demo-validation:checked) .invalid-feedback,
+.card:has(#demo-validation:checked) .is-valid{
+    display: block !important;
+}
+
+@media(hover: hover){
+    button:hover {
+        background: #52248f;
+    }
+}
