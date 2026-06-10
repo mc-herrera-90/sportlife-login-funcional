@@ -28,6 +28,6 @@ window.addEventListener("load", async () => {
     console.error(error);
 
     localStorage.removeItem("token");
-    window.location.href = "/login.html";
+    window.location.href = "../";
   }
 });
