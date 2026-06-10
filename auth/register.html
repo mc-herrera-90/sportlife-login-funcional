@@ -123,22 +123,31 @@
               class="fa-solid fa-triangle-exclamation me-1 text-danger"></i>
             Las contraseñas no coinciden</span>
         </div>
-        <!-- INPUT DEPORTE BOX -->
-        <div class="input-box">
-          <label for="deporte">¿Practicas algún deporte?</label>
-          <select name="deporte" id="deporte" class="form-select">
-            <option value="" disabled selected>Selecciona un deporte</option>
-            <option value="futbol">Fútbol</option>
-            <option value="basketball">Basketball</option>
-            <option value="tenis">Tenis</option>
-            <option value="running">Running</option>
-            <option value="natacion">Natación</option>
-            <option value="ciclismo">Ciclismo</option>
-            <option value="gym">Gimnasio</option>
-            <option value="voleibol">Voleibol</option>
-            <option value="padel">Pádel</option>
-            <option value="ninguno">Ninguno</option>
-          </select>
+        <div class="row">
+          <span class="valid-feedback">Estos campos son OPCIONALES</span>
+          <!-- INPUT DEPORTE BOX -->
+          <div class="input-box col-md-8">
+            <label for="deporte">¿Practicas algún deporte?</label>
+            <select name="deporte" id="deporte" class="form-select">
+              <option value="" disabled selected>Selecciona un deporte</option>
+              <option value="futbol">Fútbol</option>
+              <option value="basketball">Basketball</option>
+              <option value="tenis">Tenis</option>
+              <option value="running">Running</option>
+              <option value="natacion">Natación</option>
+              <option value="ciclismo">Ciclismo</option>
+              <option value="gym">Gimnasio</option>
+              <option value="voleibol">Voleibol</option>
+              <option value="padel">Pádel</option>
+              <option value="ninguno">Ninguno</option>
+            </select>
+          </div>
+
+          <!-- INPUT FRECUENCIA BOX -->
+          <div class="input-box col-md-4">
+            <label for="frecuencia">Veces por semana</label>
+            <input type="number" name="frecuencia" id="frecuencia" min="0" value="0" class="form-control">
+          </div>
         </div>
         <!-- INPUT ACTIVIDAD BOX -->
         <div class="input-box">
@@ -154,7 +163,26 @@
       </form>
 
     </div>
+    <!-- TOAST DE NOTIFICACIÓN -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div id="toastRegistro" class="toast" role="alert">
+        <div class="toast-header">
+          <strong class="me-auto">Registro exitoso</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="toast">
+          </button>
+        </div>
 
+        <div class="toast-body">
+          Usuario registrado correctamente.
+
+          <div class="mt-2 pt-2 border-top">
+            <a href="./login.html" class="btn btn-primary btn-sm">
+              Iniciar sesión
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
   <footer class="bg-dark text-light pt-4 pb-3 mt-5" id="contacto">
     <div class="container">
