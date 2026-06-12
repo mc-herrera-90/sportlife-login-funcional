@@ -1,15 +1,12 @@
 window.addEventListener("load", async () => {
-  
   let usuariosSistema = [];
   
   try {
     const token = localStorage.getItem("token");
-
     if (!token) {
       window.location.href = "/";
       return;
     }
-
     const respuesta = await fetch("http://localhost:3000/api/auth/me", {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -22,11 +19,25 @@ window.addEventListener("load", async () => {
 
     const usuario = await respuesta.json();
 
+    // Llenar el área de sidebar y navegación
     document.getElementById("fullname").textContent = usuario.data.full_name;
     document.getElementById("role").textContent = usuario.data.role;
-
     document.getElementById("perfil_email").textContent = usuario.data.email;
     document.getElementById("perfil_name").textContent = usuario.data.full_name;
+
+    // LLenamos el campo de la seccion de perfil
+    document.getElementById("perfil-nombre-card").textContent = usuario.data.full_name;
+    document.getElementById("perfil-rol").textContent = usuario.data.role;
+    document.getElementById("perfil-email-card").textContent = usuario.data.email;
+    document.getElementById("perfil-fecha-card").textContent = usuario.data.birth_date;
+    document.getElementById("perfil-rol-card").textContent = usuario.data.role;
+    document.getElementById("perfil-registro").textContent = new Date(usuario.data.created_at).toLocaleDateString("es-CL");
+
+    // Formulario editable desde perfil
+    document.getElementById("fullname_perfil_input").value = usuario.data.full_name;
+    document.getElementById("email_perfil_input").value = usuario.data.email;
+    document.getElementById("fechaNacimiento_perfil_input").value = usuario.data.birth_date;
+    document.getElementById("deporteFavorito_perfil_input").value = usuario.data.metadata.sports?.[0]?.name || "";
 
 
     if (usuario.data.role === "admin") {
@@ -44,6 +55,11 @@ window.addEventListener("load", async () => {
       const usuarios = await respuestaUsuarios.json();
 
       usuariosSistema = usuarios.data;
+      const totalUsuarios = usuariosSistema.length;
+      const coaches = usuariosSistema.filter(usuario => usuario.role === 'coach');
+
+      document.getElementById("total_usuarios").textContent = totalUsuarios;
+      document.getElementById("total_coaches").textContent = coaches.length;
 
       const tbody = document.getElementById("usuariosTableBody");
 
@@ -68,7 +84,7 @@ window.addEventListener("load", async () => {
               badgeRol = `<span class="badge text-bg-success">Usuario</span>`;
           }
 
-          return `
+          return /*html*/`
     <tr>
       <td>${usuario.id}</td>
       <td>
