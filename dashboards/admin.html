@@ -4,479 +4,887 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="../assets/favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg" />
-  <link rel="shortcut icon" href="../assets/favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="SportLife" />
-  <link rel="manifest" href="../assets/favicon/site.webmanifest" />
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-
-  <title>Dashboard Administrador</title>
-
-  <style>
-    :root {
-      --admin-primary: #dc3545;
-      --admin-secondary: #b02a37;
-      --admin-dark: #5c0b14;
-    }
-
-    body {
-      background-color: #f8f9fa;
-    }
-
-    .navbar-admin {
-      background: linear-gradient(90deg,
-          var(--admin-dark),
-          var(--admin-primary));
-    }
-
-    .nav-tabs .nav-link.active {
-      color: var(--admin-primary);
-      font-weight: 600;
-    }
-
-    .stat-card {
-      transition: .3s ease;
-    }
-
-    .stat-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .quick-action {
-      min-height: 150px;
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/css/dashboard/admin.css">
+  <title>Dashboard Admin</title>
 
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="sticky-top shadow-sm navbar-admin">
+  <!-- SIDEBAR -->
 
-    <nav class="navbar navbar-expand-lg container">
+  <aside class="sidebar" id="sidebar">
 
-      <a class="navbar-brand" href="../index.html">
-        <img src="../assets/images/logo.webp" alt="logo" width="90">
-      </a>
+    <div class="sidebar-header">
 
-      <button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#navbarAdmin">
+      <span class="sidebar-logo">
+        SportLife
+      </span><span id="role">[role]</span>
 
-        <span class="navbar-toggler-icon"></span>
+      <button class="btn btn-sm btn-light d-lg-none" id="closeSidebar">
+
+        <i class="fa-solid fa-xmark"></i>
 
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarAdmin">
+    </div>
 
-        <ul class="navbar-nav ms-auto">
+    <nav class="sidebar-menu">
 
-          <li class="nav-item">
-            <a href="#" class="nav-link text-white">
-              <i class="fa-solid fa-user me-2"></i>
-              Mi Perfil
-            </a>
-          </li>
+      <a href="#" class="active" data-section="dashboard">
+        <i class="fa-solid fa-chart-line"></i>
+        <span class="menu-text">Dashboard</span>
+      </a>
 
-          <li class="nav-item ms-lg-3">
-            <a href="../auth/logout.html" class="nav-link text-white fw-bold">
-              <i class="fa-solid fa-right-from-bracket me-2"></i>
-              Cerrar Sesión
-            </a>
-          </li>
+      <a href="#" data-section="usuarios">
+        <i class="fa-solid fa-users"></i>
+        <span class="menu-text">Usuarios</span>
+      </a>
 
-        </ul>
+      <a href="#" data-section="clases">
+        <i class="fa-solid fa-dumbbell"></i>
+        <span class="menu-text">Clases</span>
+      </a>
 
-      </div>
+      <a href="#" data-section="reservas">
+        <i class="fa-solid fa-calendar-check"></i>
+        <span class="menu-text">Reservas</span>
+      </a>
+
+      <a href="#" data-section="reportes">
+        <i class="fa-solid fa-chart-column"></i>
+        <span class="menu-text">Reportes</span>
+      </a>
+
+      <a href="#" data-section="perfil">
+        <i class="fa-solid fa-user"></i>
+        <span class="menu-text">Perfil</span>
+      </a>
 
     </nav>
 
-  </header>
+  </aside>
 
-  <main class="container py-5">
+  <!-- CONTENT -->
 
-    <div class="mb-4">
+  <div class="main-content" id="mainContent">
 
-      <h1 class="fw-bold">Bienvenido <span id="fullname">[fullname]</span></h1>
+    <!-- TOPBAR -->
 
-      <p class="text-muted mb-0 fs-4"><strong>Rol:</strong> <span id="role">[role]</span></p>
+    <header class="topbar">
 
-    </div>
+      <div>
 
-    <!-- NAV TABS -->
-    <ul class="nav nav-tabs" role="tablist">
-
-      <li class="nav-item">
-        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#usuarios">
-
-          <i class="fa-solid fa-users me-2"></i>
-          Usuarios
-
+        <button class="toggle-btn" id="toggleSidebar">
+          <i class="fa-solid fa-bars"></i>
         </button>
-      </li>
-
-      <li class="nav-item">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#reportes">
-
-          <i class="fa-solid fa-chart-column me-2"></i>
-          Reportes
-
-        </button>
-      </li>
-
-      <li class="nav-item">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#configuracion">
-
-          <i class="fa-solid fa-gear me-2"></i>
-          Configuración
-
-        </button>
-      </li>
-
-      <li class="nav-item">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#clases">
-
-          <i class="fa-solid fa-dumbbell me-2"></i>
-          Clases
-
-        </button>
-      </li>
-
-    </ul>
-
-    <div class="tab-content border border-top-0 rounded-bottom p-4 bg-white shadow-sm">
-
-      <!-- USUARIOS -->
-      <div class="tab-pane fade show active" id="usuarios">
-
-        <div class="row g-3 mb-4">
-
-          <div class="col-md-4">
-
-            <div class="card border-danger stat-card">
-
-              <div class="card-body text-center">
-
-                <i class="fa-solid fa-users fa-2x text-danger mb-3"></i>
-
-                <h6>Total Usuarios</h6>
-
-                <h2 class="fw-bold text-danger">
-                  245
-                </h2>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="col-md-4">
-
-            <div class="card border-danger stat-card">
-
-              <div class="card-body text-center">
-
-                <i class="fa-solid fa-user-tie fa-2x text-danger mb-3"></i>
-
-                <h6>Total Coaches</h6>
-
-                <h2 class="fw-bold text-danger">
-                  12
-                </h2>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="col-md-4">
-
-            <div class="card border-danger stat-card">
-
-              <div class="card-body text-center">
-
-                <i class="fa-solid fa-dumbbell fa-2x text-danger mb-3"></i>
-
-                <h6>Total Clases</h6>
-
-                <h2 class="fw-bold text-danger">
-                  28
-                </h2>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-        <h4 class="mb-3">
-          Usuarios Registrados
-        </h4>
-
-        <div class="table-responsive">
-
-          <table class="table table-hover align-middle">
-
-            <thead class="table-danger">
-
-              <tr>
-                <th>Rut</th>
-                <th>Nombre Completo</th>
-                <th>Rol</th>
-                <th>Estado</th>
-                <th>Fecha Registro</th>
-              </tr>
-
-            </thead>
-
-            <tbody>
-
-              <tr>
-                <td>12.345.678-9</td>
-                <td>Marco Herrera</td>
-                <td>Administrador</td>
-                <td>
-                  <span class="badge text-bg-success">
-                    Activo
-                  </span>
-                </td>
-                <td>10/01/2026</td>
-              </tr>
-
-              <tr>
-                <td>15.654.321-2</td>
-                <td>Camila Soto</td>
-                <td>Coach</td>
-                <td>
-                  <span class="badge text-bg-success">
-                    Activo
-                  </span>
-                </td>
-                <td>15/01/2026</td>
-              </tr>
-
-              <tr>
-                <td>18.456.987-4</td>
-                <td>Diego Ramírez</td>
-                <td>Usuario</td>
-                <td>
-                  <span class="badge text-bg-success">
-                    Activo
-                  </span>
-                </td>
-                <td>20/01/2026</td>
-              </tr>
-
-              <tr>
-                <td>19.333.444-5</td>
-                <td>Fernanda Díaz</td>
-                <td>Usuario</td>
-                <td>
-                  <span class="badge text-bg-secondary">
-                    Inactivo
-                  </span>
-                </td>
-                <td>25/01/2026</td>
-              </tr>
-
-              <tr>
-                <td>21.555.666-7</td>
-                <td>Matías Rojas</td>
-                <td>Coach</td>
-                <td>
-                  <span class="badge text-bg-success">
-                    Activo
-                  </span>
-                </td>
-                <td>01/02/2026</td>
-              </tr>
-
-            </tbody>
-
-          </table>
-
-        </div>
 
       </div>
 
-      <!-- REPORTES -->
-      <div class="tab-pane fade" id="reportes">
+      <div class="d-flex align-items-center gap-3">
+
+        <div class="d-flex flex-column align-items-end">
+          <span class="fw-semibold" id="fullname">[full_name]</span>
+          <span id="perfil_email">[correo]</span>
+
+        </div>
+
+        <img src="https://ui-avatars.com/api/?name=Admin&background=dc3545&color=fff" class="rounded-circle" width="40">
+
+      </div>
+
+    </header>
+
+    <!-- PAGE -->
+
+    <div class="container-fluid py-5 px-lg-5">
+
+      <!-- DASHBOARD -->
+
+      <section id="dashboard-section">
+
+        <div class="mb-4">
+          <h1 class="fw-bold">Dashboard</h1>
+          <p class="text-muted">
+            Bienvenido <span id="perfil_name" class="fw-bold">[full_name]</span> al panel de administración.
+          </p>
+        </div>
+
+        <!-- Tus cards actuales -->
 
         <div class="row g-4">
 
-          <div class="col-lg-4">
-
-            <div class="list-group shadow-sm">
-
-              <div class="list-group-item active bg-danger border-danger">
-
-                <i class="fa-solid fa-ranking-star me-2"></i>
-                Clases Más Solicitadas
-
+          <!-- CARD 1 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="card border-danger stat-card">
+              <div class="card-body text-center">
+                <i class="fa-solid fa-users fa-2x text-danger mb-3"></i>
+                <h6>Total Usuarios</h6>
+                <h2 class="fw-bold text-danger">245</h2>
               </div>
-
-              <div class="list-group-item">
-                <i class="fa-solid fa-dumbbell me-2 text-danger"></i>
-                Cross Training
-              </div>
-
-              <div class="list-group-item">
-                <i class="fa-solid fa-bolt me-2 text-danger"></i>
-                HIIT Power
-              </div>
-
-              <div class="list-group-item">
-                <i class="fa-solid fa-heart-pulse me-2 text-danger"></i>
-                Yoga Flow
-              </div>
-
             </div>
-
           </div>
 
-          <div class="col-lg-4">
-
-            <div class="card text-center shadow-sm">
-
-              <div class="card-body">
-
-                <i class="fa-solid fa-user-check fa-3x text-success mb-3"></i>
-
-                <h5>Usuarios Activos</h5>
-
-                <h1 class="fw-bold text-success">
-                  218
-                </h1>
-
+          <!-- CARD 2 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="card border-danger stat-card">
+              <div class="card-body text-center">
+                <i class="fa-solid fa-user-tie fa-2x text-danger mb-3"></i>
+                <h6>Coaches</h6>
+                <h2 class="fw-bold text-danger">12</h2>
               </div>
-
             </div>
-
           </div>
 
-          <div class="col-lg-4">
+        </div>
 
-            <div class="card text-center shadow-sm">
+      </section>
 
-              <div class="card-body">
+      <!-- USUARIOS -->
 
-                <i class="fa-solid fa-calendar-check fa-3x text-danger mb-3"></i>
+      <section id="usuarios-section" class="d-none">
 
-                <h5>Reservas del Día</h5>
-
-                <h1 class="fw-bold text-danger">
-                  47
-                </h1>
-
-              </div>
-
+        <div class="d-flex justify-content-between mb-4">
+          <div class="d-flex align-items-center gap-3">
+            <i class="fa-solid fa-circle-user user-icon display-2"></i>
+            <div class="text">
+              <h2 class="fw-bold">
+                Usuarios
+              </h2>
+              <p class="text-muted">Gestiona los usuarios del sistema</p>
             </div>
+          </div>
+          <button class="btn btn-danger d-flex align-items-center gap-2 my-auto" data-bs-toggle="modal"
+            data-bs-target="#nuevoUsuarioModal">
+            <i class="fa-solid fa-user-plus"></i>
+            Nuevo Usuario
+          </button>
+        </div>
+
+
+        <div class="card shadow-sm">
+
+          <div class="card-header bg-danger text-white">
+            Usuarios Registrados
+          </div>
+
+          <div class="card-body">
+
+            <table class="table table-hover">
+
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Email</th>
+                  <th>Rol</th>
+                  <th>Fecha de registro</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+
+              <tbody id="usuariosTableBody">
+                <tr>
+                  <td>12.345.678-9</td>
+                  <td>Marco Herrera</td>
+                  <td>Administrador</td>
+                  <td>12/05/2023 10:20</td>
+                  <td>
+                    <button class="btn btn-sm btn-outline-primary me-2" title="Editar">
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+
+                    <button class="btn btn-sm btn-outline-danger" title="Eliminar">
+                      <i class="fa-solid fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>15.654.321-2</td>
+                  <td>Camila Soto</td>
+                  <td>Coach</td>
+                  <td>12/05/2023 10:20</td>
+                  <td>
+                    <button class="btn btn-sm btn-outline-primary me-2" title="Editar">
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+                    <button class="btn btn-sm btn-outline-danger" title="Eliminar">
+                      <i class="fa-solid fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+
+            </table>
 
           </div>
 
         </div>
 
-      </div>
+      </section>
 
-      <!-- CONFIGURACION -->
-      <div class="tab-pane fade" id="configuracion">
+      <!-- CLASES -->
 
-        <div class="row g-3">
+      <section id="clases-section" class="d-none">
 
-          <div class="col-md-4">
+        <h1 class="fw-bold mb-4">
+          Gestión de Clases
+        </h1>
 
-            <button class="btn btn-danger w-100 quick-action">
+        <div class="card">
 
-              <i class="fa-solid fa-user-plus fa-3x d-block mb-3"></i>
+          <div class="card-body">
 
+            <ul class="list-group">
+
+              <li class="list-group-item">
+                Cross Training
+              </li>
+
+              <li class="list-group-item">
+                Yoga Flow
+              </li>
+
+              <li class="list-group-item">
+                HIIT Power
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- RESERVAS -->
+
+      <section id="reservas-section" class="d-none">
+
+        <h1 class="fw-bold">
+          Reservas
+        </h1>
+
+        <p class="text-muted">
+          Próximamente...
+        </p>
+
+      </section>
+
+      <!-- REPORTES -->
+
+      <section id="reportes-section" class="d-none">
+
+        <h1 class="fw-bold">
+          Reportes
+        </h1>
+
+        <p class="text-muted">
+          Próximamente...
+        </p>
+
+      </section>
+
+      <!-- PERFIL -->
+
+      <section id="perfil-section" class="d-none">
+
+        <h1 class="fw-bold">
+          Perfil
+        </h1>
+
+        <p class="text-muted">
+          Próximamente...
+        </p>
+
+      </section>
+
+    </div>
+
+  </div>
+
+  <!-- MODAL NUEVO USUARIO -->
+  <div class="modal fade" id="nuevoUsuarioModal" tabindex="-1" aria-labelledby="nuevoUsuarioModalLabel"
+    aria-hidden="true">
+
+    <div class="modal-dialog modal-lg">
+
+      <div class="modal-content">
+
+        <div class="modal-header bg-danger text-white">
+
+          <h5 class="modal-title" id="nuevoUsuarioModalLabel">
+
+            <i class="fa-solid fa-user-plus me-2"></i>
+            Nuevo Usuario
+
+          </h5>
+
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal">
+          </button>
+
+        </div>
+
+        <form id="formNuevoUsuario">
+          <div class="modal-body">
+
+            <div class="row g-3">
+
+              <!-- Nombre -->
+
+              <div class="col-12">
+
+                <div class="form-floating">
+
+                  <input type="text" class="form-control" id="full_name" placeholder="Nombre Completo" required>
+
+                  <label for="full_name">
+                    Nombre Completo
+                  </label>
+
+                </div>
+
+              </div>
+
+              <!-- Email -->
+
+              <div class="col-md-6">
+
+                <div class="form-floating">
+
+                  <input type="email" class="form-control" id="email" placeholder="Correo Electrónico" required>
+
+                  <label for="email">
+                    Correo Electrónico
+                  </label>
+
+                </div>
+
+              </div>
+
+              <!-- Fecha nacimiento -->
+
+              <div class="col-md-6">
+
+                <div class="form-floating">
+
+                  <input type="date" class="form-control" id="birth_date" placeholder="Fecha de Nacimiento" required>
+
+                  <label for="birth_date">
+                    Fecha de Nacimiento
+                  </label>
+
+                </div>
+
+              </div>
+
+              <!-- Contraseña -->
+
+              <div class="col-md-6">
+
+                <div class="form-floating">
+
+                  <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
+
+                  <label for="password">
+                    Contraseña
+                  </label>
+
+                </div>
+
+              </div>
+
+              <!-- Confirmar -->
+
+              <div class="col-md-6">
+
+                <div class="form-floating">
+
+                  <input type="password" class="form-control" id="confirm_password" placeholder="Confirmar Contraseña"
+                    required>
+
+                  <label for="confirm_password">
+                    Confirmar Contraseña
+                  </label>
+
+                </div>
+
+              </div>
+
+              <!-- Rol -->
+
+              <div class="col-md-6">
+
+                <div class="form-floating">
+
+                  <select class="form-select" id="role_user" required>
+
+                    <option value="">
+                      Seleccione...
+                    </option>
+
+                    <option value="user">
+                      Usuario
+                    </option>
+
+                    <option value="coach">
+                      Coach
+                    </option>
+
+                    <option value="admin">
+                      Administrador
+                    </option>
+
+                  </select>
+
+                  <label for="role_user">
+                    Rol
+                  </label>
+
+                </div>
+
+              </div>
+
+              <!-- Deporte -->
+
+              <div class="col-md-6">
+
+                <div class="form-floating">
+
+                  <select class="form-select" id="sport">
+
+                    <option value="">
+                      Seleccione...
+                    </option>
+
+                    <option value="football">
+                      Fútbol
+                    </option>
+
+                    <option value="basketball">
+                      Básquetbol
+                    </option>
+
+                    <option value="swimming">
+                      Natación
+                    </option>
+
+                    <option value="running">
+                      Running
+                    </option>
+
+                    <option value="cycling">
+                      Ciclismo
+                    </option>
+
+                    <option value="crossfit">
+                      CrossFit
+                    </option>
+
+                  </select>
+
+                  <label for="sport">
+                    Deporte Principal
+                  </label>
+
+                </div>
+
+              </div>
+
+              <!-- Frecuencia -->
+
+              <div class="col-md-6">
+
+                <div class="form-floating">
+
+                  <select class="form-select" id="frequency_per_week">
+
+                    <option value="">
+                      Seleccione...
+                    </option>
+
+                    <option value="1">
+                      1 vez por semana
+                    </option>
+
+                    <option value="2">
+                      2 veces por semana
+                    </option>
+
+                    <option value="3">
+                      3 veces por semana
+                    </option>
+
+                    <option value="4">
+                      4 veces por semana
+                    </option>
+
+                    <option value="5">
+                      5 veces por semana
+                    </option>
+
+                    <option value="6">
+                      6 veces por semana
+                    </option>
+
+                    <option value="7">
+                      Todos los días
+                    </option>
+
+                  </select>
+
+                  <label for="frequency_per_week">
+                    Frecuencia Semanal
+                  </label>
+
+                </div>
+
+              </div>
+
+              <!-- Cambio de contraseña -->
+
+              <div class="col-md-6 d-flex align-items-center">
+
+                <div class="form-check form-switch mt-2">
+
+                  <input class="form-check-input" type="checkbox" id="must_change_password">
+
+                  <label class="form-check-label" for="must_change_password">
+
+                    Solicitar cambio de contraseña
+
+                  </label>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+          <div class="modal-footer">
+
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+
+              Cancelar
+
+            </button>
+
+            <button type="submit" class="btn btn-danger">
+
+              <i class="fa-solid fa-floppy-disk me-2"></i>
               Crear Usuario
 
             </button>
 
           </div>
 
-          <div class="col-md-4">
-
-            <button class="btn btn-outline-danger w-100 quick-action">
-
-              <i class="fa-solid fa-pen-to-square fa-3x d-block mb-3"></i>
-
-              Editar Sistema
-
-            </button>
-
-          </div>
-
-          <div class="col-md-4">
-
-            <button class="btn btn-dark w-100 quick-action">
-
-              <i class="fa-solid fa-gears fa-3x d-block mb-3"></i>
-
-              Configuración
-
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- CLASES -->
-      <div class="tab-pane fade" id="clases">
-
-        <h4 class="mb-3">
-          Gestión de Clases
-        </h4>
-
-        <div class="list-group">
-
-          <div class="list-group-item d-flex justify-content-between">
-            <span>Cross Training</span>
-            <span class="badge text-bg-danger">35 inscritos</span>
-          </div>
-
-          <div class="list-group-item d-flex justify-content-between">
-            <span>HIIT Power</span>
-            <span class="badge text-bg-danger">28 inscritos</span>
-          </div>
-
-          <div class="list-group-item d-flex justify-content-between">
-            <span>Yoga Flow</span>
-            <span class="badge text-bg-danger">24 inscritos</span>
-          </div>
-
-          <div class="list-group-item d-flex justify-content-between">
-            <span>Spinning</span>
-            <span class="badge text-bg-danger">19 inscritos</span>
-          </div>
-
-          <div class="list-group-item d-flex justify-content-between">
-            <span>Funcional</span>
-            <span class="badge text-bg-danger">22 inscritos</span>
-          </div>
-
-        </div>
+        </form>
 
       </div>
 
     </div>
 
-  </main>
+  </div>
+  <!-- Modal Editar Usuario -->
+  <div class="modal fade" id="editarUsuarioModal" tabindex="-1" aria-labelledby="editarUsuarioModalLabel"
+    aria-hidden="true">
+
+    <div class="modal-dialog modal-lg">
+
+      <div class="modal-content">
+
+        <div class="modal-header bg-danger text-white">
+
+          <h5 class="modal-title" id="editarUsuarioModalLabel">
+
+            <i class="fa-solid fa-user-pen me-2"></i>
+            Editar Usuario
+
+          </h5>
+
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal">
+          </button>
+
+        </div>
+
+        <form id="formEditarUsuario">
+
+          <input type="hidden" id="edit_id">
+
+          <div class="modal-body">
+
+            <div class="row g-3">
+
+              <!-- Nombre -->
+
+              <div class="col-12">
+
+                <div class="form-floating">
+
+                  <input type="text" class="form-control" id="edit_full_name" placeholder="Nombre Completo" required>
+
+                  <label for="edit_full_name">
+                    Nombre Completo
+                  </label>
+
+                </div>
+
+              </div>
+
+              <!-- Email -->
+
+              <div class="col-md-6">
+
+                <div class="form-floating">
+
+                  <input type="email" class="form-control" id="edit_email" placeholder="Correo Electrónico" required>
+
+                  <label for="edit_email">
+                    Correo Electrónico
+                  </label>
+
+                </div>
+
+              </div>
+
+              <!-- Fecha -->
+
+              <div class="col-md-6">
+
+                <div class="form-floating">
+
+                  <input type="date" class="form-control" id="edit_birth_date" placeholder="Fecha de Nacimiento"
+                    required>
+
+                  <label for="edit_birth_date">
+                    Fecha de Nacimiento
+                  </label>
+
+                </div>
+
+              </div>
+
+              <!-- Rol -->
+
+              <div class="col-md-6">
+
+                <div class="form-floating">
+
+                  <select class="form-select" id="edit_role" required>
+
+                    <option value="user">
+                      Usuario
+                    </option>
+
+                    <option value="coach">
+                      Coach
+                    </option>
+
+                    <option value="admin">
+                      Administrador
+                    </option>
+
+                  </select>
+
+                  <label for="edit_role">
+                    Rol
+                  </label>
+
+                </div>
+
+              </div>
+
+              <!-- Deporte -->
+
+              <div class="col-md-6">
+
+                <div class="form-floating">
+
+                  <select class="form-select" id="edit_sport">
+
+                    <option value="">
+                      Seleccione...
+                    </option>
+
+                    <option value="football">
+                      Fútbol
+                    </option>
+
+                    <option value="basketball">
+                      Básquetbol
+                    </option>
+
+                    <option value="swimming">
+                      Natación
+                    </option>
+
+                    <option value="running">
+                      Running
+                    </option>
+
+                    <option value="cycling">
+                      Ciclismo
+                    </option>
+
+                    <option value="crossfit">
+                      CrossFit
+                    </option>
+
+                  </select>
+
+                  <label for="edit_sport">
+                    Deporte Principal
+                  </label>
+
+                </div>
+
+              </div>
+
+              <!-- Frecuencia -->
+
+              <div class="col-md-6">
+
+                <div class="form-floating">
+
+                  <select class="form-select" id="edit_frequency_per_week">
+
+                    <option value="1">1 vez por semana</option>
+                    <option value="2">2 veces por semana</option>
+                    <option value="3">3 veces por semana</option>
+                    <option value="4">4 veces por semana</option>
+                    <option value="5">5 veces por semana</option>
+                    <option value="6">6 veces por semana</option>
+                    <option value="7">Todos los días</option>
+
+                  </select>
+
+                  <label for="edit_frequency_per_week">
+                    Frecuencia Semanal
+                  </label>
+
+                </div>
+
+              </div>
+
+              <!-- Cambio de contraseña -->
+
+              <div class="col-md-6 d-flex align-items-center">
+
+                <div class="form-check form-switch mt-2">
+
+                  <input class="form-check-input" type="checkbox" id="edit_must_change_password">
+
+                  <label class="form-check-label" for="edit_must_change_password">
+
+                    Solicitar cambio de contraseña
+
+                  </label>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="modal-footer">
+
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+
+              Cancelar
+
+            </button>
+
+            <button type="submit" class="btn btn-danger">
+
+              <i class="fa-solid fa-floppy-disk me-2"></i>
+              Guardar Cambios
+
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+  <script>
+
+    const sidebar = document.getElementById("sidebar");
+    const mainContent = document.getElementById("mainContent");
+
+    document
+      .getElementById("toggleSidebar")
+      .addEventListener("click", () => {
+
+        if (window.innerWidth <= 992) {
+
+          sidebar.classList.toggle("show");
+
+        } else {
+
+          sidebar.classList.toggle("collapsed");
+          mainContent.classList.toggle("expanded");
+
+        }
+
+      });
+
+    document
+      .getElementById("closeSidebar")
+      .addEventListener("click", () => {
+
+        sidebar.classList.remove("show");
+
+      });
+
+    const menuLinks = document.querySelectorAll("[data-section]");
+    const sections = document.querySelectorAll("section");
+
+    menuLinks.forEach(link => {
+
+      link.addEventListener("click", e => {
+
+        e.preventDefault();
+
+        const section = link.dataset.section;
+
+        sections.forEach(sec => {
+          sec.classList.add("d-none");
+        });
+
+        document
+          .getElementById(`${section}-section`)
+          .classList.remove("d-none");
+
+        menuLinks.forEach(item => {
+          item.classList.remove("active");
+        });
+
+        link.classList.add("active");
+
+        if (window.innerWidth <= 992) {
+          sidebar.classList.remove("show");
+        }
+
+      });
+
+    });
+
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/js/dashboard.js"></script>
-
 </body>
 
 </html>

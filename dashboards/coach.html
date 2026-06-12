@@ -27,12 +27,10 @@
     }
 
     .navbar-user {
-      background: linear-gradient(
-        90deg,
-        #14532d,
-        #198754,
-        #20c997
-      );
+      background: linear-gradient(90deg,
+          #14532d,
+          #198754,
+          #20c997);
     }
 
     .navbar-user .nav-link {
@@ -50,17 +48,10 @@
     <nav class="navbar navbar-expand-lg container">
 
       <a class="navbar-brand" href="../index.html">
-        <img
-          src="../assets/images/logo.webp"
-          alt="Logo"
-          width="90">
+        <img src="../assets/images/logo.webp" alt="Logo" width="90">
       </a>
 
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#nav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
 
         <span class="navbar-toggler-icon"></span>
 
@@ -78,7 +69,7 @@
           </li>
 
           <li class="nav-item ms-lg-3">
-            <a class="nav-link fw-bold" href="#">
+            <a class="nav-link fw-bold" href="../auth/logout.html">
               <i class="fa-solid fa-right-from-bracket me-1"></i>
               Cerrar sesión
             </a>
@@ -97,19 +88,14 @@
     <!-- BOTÓN OFFCANVAS -->
     <div class="mb-4">
 
-      <button
-        class="btn text-white shadow-sm"
-        style="
+      <button class="btn text-white shadow-sm" style="
           background:linear-gradient(
           135deg,
           #198754,
           #146c43
           );
           border:none;
-        "
-        type="button"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#coachMenu">
+        " type="button" data-bs-toggle="offcanvas" data-bs-target="#coachMenu">
 
         <i class="fa-solid fa-bars me-2"></i>
         Navegación
@@ -119,14 +105,9 @@
     </div>
 
     <!-- OFFCANVAS -->
-    <div
-      class="offcanvas offcanvas-start"
-      tabindex="-1"
-      id="coachMenu">
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="coachMenu">
 
-      <div
-        class="offcanvas-header text-white"
-        style="
+      <div class="offcanvas-header text-white" style="
           background:linear-gradient(
           135deg,
           #146c43,
@@ -140,10 +121,7 @@
           Dashboard Coach
         </h5>
 
-        <button
-          type="button"
-          class="btn-close btn-close-white"
-          data-bs-dismiss="offcanvas">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas">
         </button>
 
       </div>
@@ -179,48 +157,53 @@
     </div>
 
     <!-- PERFIL -->
+     <div class="row">
+    <div class="col-12 col-lg-6 mb-4">
+      <h1 class="fw-bold">Bienvenido <span id="fullname">[fullname]</span></h1>
+      <p class="text-muted mb-0 fs-4"><strong>Rol:</strong> <span id="role">[role]</span></p>
+    </div>
+    <div class="col-12 col-lg-6 text-center mb-xl-4">
 
-        <div class="col-12 col-lg-6 text-center mb-xl-4">
+      <div class="card border-0 shadow-sm">
 
-          <div class="card border-0 shadow-sm">
+        <div class="card-body text-center p-4">
 
-            <div class="card-body text-center p-4">
+          <img src="https://cdn.pixabay.com/photo/2016/03/31/19/58/avatar-1295430_1280.png" alt="Avatar" width="100"
+            class="rounded-circle mb-3">
 
-              <img src="https://cdn.pixabay.com/photo/2016/03/31/19/58/avatar-1295430_1280.png" alt="Avatar" width="100"
-                class="rounded-circle mb-3">
+          <h4 class="fw-bold" id="perfil_name">
+            [Marco]
+          </h4>
 
-              <h4 class="fw-bold" id="perfil_name">
-                [Marco]
-              </h4>
+          <p class="text-muted" id="perfil_email">[mcherrera@email.com]</p>
 
-              <p class="text-muted" id="perfil_email">[mcherrera@email.com]</p>
+          <hr>
 
-              <hr>
+          <div class="row g-3">
 
-              <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <p class="mb-0">
+                <i class="fa-solid fa-dumbbell me-2"></i>
+                Fitness
+              </p>
+            </div>
 
-                <div class="col-12 col-md-6">
-                  <p class="mb-0">
-                    <i class="fa-solid fa-dumbbell me-2"></i>
-                    Fitness
-                  </p>
-                </div>
-
-                <div class="col-12 col-md-6">
-                  <p class="mb-0">
-                    <i class="fa-solid fa-calendar me-2"></i>
-                    Miembro desde 2025
-                  </p>
-                </div>
-
-              </div>
-
+            <div class="col-12 col-md-6">
+              <p class="mb-0">
+                <i class="fa-solid fa-calendar me-2"></i>
+                Miembro desde 2025
+              </p>
             </div>
 
           </div>
 
-
         </div>
+
+      </div>
+
+
+    </div>
+    </div>
     <!-- INICIO -->
     <section id="inicio" class="mb-5">
       <div class="row g-3">
