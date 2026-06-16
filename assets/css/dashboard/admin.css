@@ -128,6 +128,13 @@ body {
   background-clip: text;
 }
 
+.modal-body:has(#demo-validation:checked) .valid-feedback,
+.modal-body:has(#demo-validation:checked) .is-valid{
+    display: block !important;
+    color: #6c757d;;
+}
+
+
 /* MOBILE */
 @media (max-width: 992px) {
 
