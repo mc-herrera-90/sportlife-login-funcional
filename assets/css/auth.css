@@ -111,9 +111,10 @@ button {
     gap: 5px;
 }
 
-.card:has(#demo-validation:checked) .invalid-feedback,
+.card:has(#demo-validation:checked) .valid-feedback,
 .card:has(#demo-validation:checked) .is-valid{
     display: block !important;
+    color: #6c757d;;
 }
 
 @media(hover: hover){
