@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <h2>Usuarios</h2>
+
+  <form id="form">
+    <input type="text" placeholder="email" id="email">
+    <input type="password" placeholder="password" id="password">
+    <button type="submit">Enviar</button>
+  </form>
+  <script>
+
+    const correo = document.getElementById("email");
+    const contrasenia = document.getElementById("password");
+    
+    const formulario = document.getElementById("form");
+
+    formulario.addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      // Fetch sin async await
+
+      fetch("http://localhost:3000/api/auth/login", {
+        method: "POST",
+        body: JSON.stringify({
+          email: correo.value,
+          password: contrasenia.value
+        })
+      })
+      .then(respuesta => respuesta.json())
+      .then(datos => console.log(datos))
+      .catch(error => console.error(error.message))
+
+    })
+
+
+  </script>
+</body>
+</html>

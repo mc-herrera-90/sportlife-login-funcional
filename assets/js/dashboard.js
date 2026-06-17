@@ -147,6 +147,7 @@ window.addEventListener("load", async () => {
   // Listeners
   const formNuevoUsuario = document.getElementById("formNuevoUsuario");
 
+
   // Listener para llenar el modal de editar
   document.addEventListener("click", (e) => {
     const btnEditar = e.target.closest(".btn-editar");
@@ -163,16 +164,15 @@ window.addEventListener("load", async () => {
     document.getElementById("edit_id").value = usuario.id;
     document.getElementById("edit_full_name").value = usuario.full_name;
     document.getElementById("edit_email").value = usuario.email;
-    document.getElementById("edit_birth_date").value = usuario.birth_date;
-    document.getElementById("edit_role").value = usuario.role;
+    document.getElementById("edit_nacimiento").value = usuario.birth_date;
+    document.getElementById("edit_rol").value = usuario.role;
     if (usuario.metadata?.sports?.length > 0) {
-      document.getElementById("edit_sport").value =
+      document.getElementById("edit_deporte").value =
         usuario.metadata.sports[0].name;
 
-      document.getElementById("edit_frequency_per_week").value =
+      document.getElementById("edit_frecuencia").value =
         usuario.metadata.sports[0].frequency_per_week;
     }
-
     // Mostrar modal
     const modalEditar = new bootstrap.Modal(
       document.getElementById("editarUsuarioModal"),
@@ -221,10 +221,8 @@ window.addEventListener("load", async () => {
         timer: 2000,
         showConfirmButton: false,
       });
-
       // Eliminar de la lista local
       usuariosSistema = usuariosSistema.filter((usuario) => usuario.id !== id);
-
       // Eliminar la fila de la tabla sin recargar
       btnEliminar.closest("tr").remove();
       actualizarDashboard();
@@ -243,6 +241,7 @@ window.addEventListener("load", async () => {
     let formularioValido = true;
 
     event.preventDefault();
+    const token = localStorage.getItem("token");
 
     // Nodos del formulario
     const nombre = event.target.elements.full_name;
@@ -300,7 +299,10 @@ window.addEventListener("load", async () => {
 
     const opcionfetch = {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { 
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      },
       body: JSON.stringify({
         full_name: nombre.value,
         email: correo.value,
@@ -319,7 +321,7 @@ window.addEventListener("load", async () => {
     };
     try {
       const respuesta = await fetch(
-        `http://localhost:3000/api/auth/register`,
+        `http://localhost:3000/api/users`,
         opcionfetch,
       );
 
@@ -354,6 +356,21 @@ window.addEventListener("load", async () => {
     }
   });
 
+  // Submit: Actualizar usuario admin
+  const formActualizarUsuario = document.getElementById("formEditarUsuario");
+
+  formActualizarUsuario?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const nombre = document.getElementById("edit_full_name");
+    const correo = document.getElementById("edit_email");
+    const nacimiento = document.getElementById("edit_nacimiento");
+    const rol = document.getElementById("edit_role");
+    const deporte = document.getElementById("edit_deporte");
+    const frecuencia = document.getElementById("edit_frecuencia");
+    
+    alert("Actualizar");
+  })
+
   // Actualizar Dashboard
   function actualizarDashboard() {
     const totalUsuarios = usuariosSistema.length;
@@ -387,4 +404,29 @@ window.addEventListener("load", async () => {
   }
 
   actualizarDashboard();
+
+  async function actualizar(id, datosNuevos) {
+    const opcionfetch = {
+      method: 'put',
+      body: JSON.stringify(datosNuevos)
+    }
+
+    try {
+      const respuesta = await `http://localhost:3000/api/users/${id}`;
+      const data = await respuesta.json();
+
+      if (!respuesta.ok) {
+        throw new Error(data.message);
+      }
+      await Swal.fire({
+        icon: "success",
+        title: "Usuario creado",
+        text: "El usuario fue registrado correctamente.",
+        confirmButtonText: "Aceptar",
+      });
+
+    } catch(error) {
+      console.error(error);
+    }
+  }
 });

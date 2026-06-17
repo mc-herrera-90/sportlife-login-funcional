@@ -751,147 +751,95 @@
 
         </div>
 
-        <form id="formEditarUsuario">
+        <form id="formEditarUsuario" novalidate>
 
           <input type="hidden" id="edit_id">
 
           <div class="modal-body">
 
             <div class="row g-3">
-
               <!-- Nombre -->
-
               <div class="col-12">
-
                 <div class="form-floating">
-
                   <input type="text" class="form-control" id="edit_full_name" placeholder="Nombre Completo" required>
-
                   <label for="edit_full_name">
                     Nombre Completo
                   </label>
-
                 </div>
-
               </div>
-
               <!-- Email -->
-
               <div class="col-md-6">
-
                 <div class="form-floating">
-
                   <input type="email" class="form-control" id="edit_email" placeholder="Correo Electrónico" required>
-
                   <label for="edit_email">
                     Correo Electrónico
                   </label>
 
                 </div>
-
               </div>
-
               <!-- Fecha -->
-
               <div class="col-md-6">
-
                 <div class="form-floating">
-
-                  <input type="date" class="form-control" id="edit_birth_date" placeholder="Fecha de Nacimiento"
-                    required>
-
-                  <label for="edit_birth_date">
+                  <input type="date" class="form-control" id="edit_nacimiento" placeholder="Fecha de Nacimiento">
+                  <label for="edit_nacimiento">
                     Fecha de Nacimiento
                   </label>
-
                 </div>
-
               </div>
-
               <!-- Rol -->
-
               <div class="col-md-6">
-
                 <div class="form-floating">
-
-                  <select class="form-select" id="edit_role" required>
-
+                  <select class="form-select" id="edit_rol" required>
                     <option value="user">
                       Usuario
                     </option>
-
                     <option value="coach">
                       Coach
                     </option>
-
                     <option value="admin">
                       Administrador
                     </option>
-
                   </select>
-
-                  <label for="edit_role">
+                  <label for="edit_rol">
                     Rol
                   </label>
-
                 </div>
-
               </div>
-
               <!-- Deporte -->
-
               <div class="col-md-6">
-
                 <div class="form-floating">
-
-                  <select class="form-select" id="edit_sport">
-
+                  <select class="form-select" id="edit_deporte">
                     <option value="">
                       Seleccione...
                     </option>
-
                     <option value="football">
                       Fútbol
                     </option>
-
                     <option value="basketball">
                       Básquetbol
                     </option>
-
                     <option value="swimming">
                       Natación
                     </option>
-
                     <option value="running">
                       Running
                     </option>
-
                     <option value="cycling">
                       Ciclismo
                     </option>
-
                     <option value="crossfit">
                       CrossFit
                     </option>
-
                   </select>
-
-                  <label for="edit_sport">
+                  <label for="edit_deporte">
                     Deporte Principal
                   </label>
-
                 </div>
-
               </div>
-
               <!-- Frecuencia -->
-
               <div class="col-md-6">
-
                 <div class="form-floating">
-
-                  <select class="form-select" id="edit_frequency_per_week">
-
+                  <select class="form-select" id="edit_frecuencia">
                     <option value="1">1 vez por semana</option>
                     <option value="2">2 veces por semana</option>
                     <option value="3">3 veces por semana</option>
@@ -899,23 +847,18 @@
                     <option value="5">5 veces por semana</option>
                     <option value="6">6 veces por semana</option>
                     <option value="7">Todos los días</option>
-
                   </select>
-
-                  <label for="edit_frequency_per_week">
+                  <label for="edit_frecuencia">
                     Frecuencia Semanal
                   </label>
-
                 </div>
-
               </div>
-
-              <!-- Cambio de contraseña -->
+              <!-- mostrar_ayuda -->
               <div class="col-md-6 d-flex align-items-center">
                 <div class="form-check form-switch mt-2">
-                  <input class="form-check-input" type="checkbox" id="ayuda">
-                  <label class="form-check-label" for="ayuda">
-                    Solicitar cambio de contraseña
+                  <input class="form-check-input" type="checkbox" id="edit_ayuda">
+                  <label class="form-check-label" for="edit_ayuda">
+                    Mostrar ayuda
                   </label>
 
                 </div>
